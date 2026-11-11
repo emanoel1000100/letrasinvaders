@@ -32,5 +32,16 @@ make clean && make
 ## Arquivos
 
 `src/main.c`, `src/game.c`, `src/levels.c`, `src/keyboard.c`, `src/render.c`, `src/effects.c`, `src/gfx.c`, `src/font.c` e `include/game.h`.
+sudo apt update
+sudo apt install build-essential wget tar pkg-config libx11-dev libxext-dev libxrandr-dev libxrender-dev
 
+cd ~
+wget https://www.libsdl.org/release/SDL2-2.0.20.tar.gz
+
+tar -xzf SDL2-2.0.20.tar.gz
+cd SDL2-2.0.20
+
+./configure --prefix="$HOME/sdl2-nova"
+make -j2
+make install
 **Nota:** SDL2 >= 2.0.18 é necessária para desenhar a nave usando `SDL_RenderGeometry`. O SDL2 atual do Arch atende a esse requisito.
